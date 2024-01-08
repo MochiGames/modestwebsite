@@ -1,101 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modest Wiki</title>
+  <title>Magnetite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
   <style>
-    @font-face {
-      font-family: 'Pricedown';
-      src: url('fonts/Pricedown.ttf') format('truetype');
-      /* Add more font formats if needed (e.g., woff, woff2) */
-    }
-
-    @font-face {
-      font-family: 'Chalet Comprime Cologne Sixty Scale';
-      src: url('fonts/ChaletComprimeCologneSixtyScale.ttf') format('truetype');
-      /* Add more font formats if needed (e.g., woff, woff2) */
-    }
-
-    @font-face {
-      font-family: 'Signpainter';
-      src: url('fonts/Signpainter.ttf') format('truetype');
-      /* Add more font formats if needed (e.g., woff, woff2) */
-    }
-
     body {
-      font-family: 'Chalet Comprime Cologne Sixty Scale', sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #AEDBF2;
-      color: #FFFFFF;
-      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      overflow: hidden;
     }
 
-    header {
+    #scroll-container {
+      height: 100%;
+      width: 100vw;
+      overflow-y: scroll;
+      position: fixed;
+    }
+
+    section {
+      height: 100vh;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 20px;
-      background-color: #AEDBF2;
-      color: #FFFFFF;
+      justify-content: center;
+      scroll-snap-align: start;
     }
 
-    .gta-header {
-      font-family: 'Pricedown', sans-serif;
+    #intro {
+      background-color: #111;
+      color: #fff;
     }
-       
-    .pricecent {
-      font-family: 'Pricedown', sans-serif;
+
+    #github-section {
+      background-color: #111;
+      color: #fff;
+    }
+
+    #about-section {
+      background-color: #111;
+      color: #fff;
+    }
+
+    #creations-section {
+      background-color: #111;
+      color: #fff;
+    }
+
+    #contact-section {
+      background-color: #111;
+      color: #fff;
+    }
+
+    h1 {
+      font-weight: 800;
+      font-size: 6em;
+      animation: colorChange 10s infinite linear;
+      margin-bottom: 20px;
+    }
+
+    div.links {
       text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #111;
+      z-index: 2;
+      padding: 10px 0;
+      transition: background-color 0.3s ease-in-out; /* Added transition effect */
     }
 
-    nav {
-      text-align: center;
-      background-color: #AEDBF2;
-      padding: 10px;
-    }
-
-    nav a {
+    div.links a {
+      color: #fff;
       text-decoration: none;
-      margin: 0 15px;
-      font-family: 'Pricedown', sans-serif;
-      color: #FFFFFF;
+      margin: 0 5px;
+      transition: font-size 0.3s ease-in-out;
     }
 
-    .titles {
-      font-family: 'Signpainter', sans-serif;
-      text-align: center;
-      margin-top: 30px;
+    div.links a:hover {
+      font-size: 1.2em;
+    }
+
+    div.links a:not(:hover) {
+      font-size: 1em;
+    }
+
+    #dots-container {
+      position: fixed;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      border-radius: 50%;
+      margin: 10px 0;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .dot.active {
+      opacity: 1;
+    }
+
+    /* Custom scrollbar styles */
+    #scroll-container::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    #scroll-container::-webkit-scrollbar-thumb {
+      background-color: #111;
+      border-radius: 10px;
+    }
+
+    #scroll-container::-webkit-scrollbar-track {
+      background-color: #111;
+      border-radius: 10px;
+    }
+
+    @keyframes colorChange {
+      0% {
+        color: rgb(255, 0, 0);
+      }
+
+      25% {
+        color: rgb(255, 255, 0);
+      }
+
+      50% {
+        color: rgb(0, 255, 0);
+      }
+
+      75% {
+        color: rgb(0, 255, 255);
+      }
+
+      100% {
+        color: rgb(255, 0, 255);
+      }
     }
   </style>
 </head>
+
 <body>
+  <div id="scroll-container">
+    <section id="intro">
+      <h1>Magnetite</h1>
+    </section>
 
-  <header>
-<div class="gta-header" style="font-size: 35px;">Modest Wiki</div>
-    <nav>
-<a href="modest.mochig.com" style="font-size: 20px;">Home</a>
-<a href="modest.mochig.com/explore" style="font-size: 20px;">Explore</a>
-<a href="modest.mochig.com/categories" style="font-size: 20px;">Categories</a>
-<a href="modest.mochig.com/contributors" style="font-size: 20px;">Contributors</a>
-    </nav>
-  </header>
+    <div class="links">
+      <a href="#intro">Magnetite</a>
+      <a href="#github-section">[GITHUB]</a>
+      <a href="#about-section">[ABOUT]</a>
+      <a href="#creations-section">[CREATIONS]</a>
+      <a href="#contact-section">[CONTACT]</a>
+    </div>
 
-  <div class="titles">
-    <h3>Founded 2023</h3>
+    <section id="github-section">
+      <header>
+        <h2>[GITHUB]</h2>
+      </header>
+    </section>
+
+    <section id="about-section">
+      <header>
+        <h2>[ABOUT]</h2>
+      </header>
+    </section>
+
+    <section id="creations-section">
+      <header>
+        <h2>[CREATIONS]</h2>
+      </header>
+    </section>
+
+    <section id="contact-section">
+      <header>
+        <h2>[CONTACT]</h2>
+      </header>
+    </section>
+
+    <!-- Add more sections as needed -->
+
+    <div id="dots-container">
+      <div class="dot" onclick="scrollToSection(0)"></div>
+      <div class="dot" onclick="scrollToSection(1)"></div>
+      <div class="dot" onclick="scrollToSection(2)"></div>
+      <div class="dot" onclick="scrollToSection(3)"></div>
+      <div class="dot" onclick="scrollToSection(4)"></div>
+    </div>
   </div>
-  
-<div 
-  class="gta-header" style="font-size: 35px;">
-  Modest Wiki
-</div>
- 
-  <div class="titles">
-    <h4>Hosted on Mochi</h4>
-  </div>
-  
-  <p>Copyright 2023-2024 Mochi LLC<br>This website is not an official wiki for the modest menu, This is fanmade and <br>not registered as a trademark. Modest Menu is created by Kiddions.</p>
 
+  <!-- Script to smoothly scroll to anchor links -->
+  <script>
+    const dots = document.querySelectorAll('.dot');
+    const sections = document.querySelectorAll('section');
+    const navbar = document.querySelector('.links');
+
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY;
+
+      sections.forEach((section, index) => {
+        const offsetTop = section.offsetTop;
+        const offsetBottom = offsetTop + section.clientHeight;
+
+        if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+          activateDot(index);
+        }
+      });
+
+      // Change navbar background color when scrolling
+      const introHeight = document.getElementById('intro').clientHeight;
+      if (scrollPosition >= introHeight) {
+        navbar.style.backgroundColor = '#333'; // Change to your desired color
+      } else {
+        navbar.style.backgroundColor = '#111';
+      }
+    });
+
+    function scrollToSection(index) {
+      const section = sections[index];
+      window.scrollTo({
+        top: section.offsetTop,
+        behavior: 'smooth'
+      });
+    }
+
+    function activateDot(index) {
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+    }
+  </script>
 </body>
+
 </html>
