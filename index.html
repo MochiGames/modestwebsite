@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Homepage</title>
+  <title>mag's lightblue Homepage</title>
   <style>
     @font-face {
       font-family: 'Pricedown';
-      src: url('fonts/Pricedown.ttf') format('truetype');
+      src: url('fonts/Pricedown.otf') format('opentype');
       /* Add more font formats if needed (e.g., woff, woff2) */
     }
 
@@ -25,19 +25,28 @@
 
     body {
       font-family: 'Chalet Comprime Cologne Sixty Scale', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #AEDBF2;
+      color: #FFFFFF;
     }
 
     header {
-      text-align: center;
-      font-family: 'Pricedown', sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 20px;
-      background-color: #333;
-      color: white;
+      background-color: #AEDBF2;
+      color: #FFFFFF;
+    }
+
+    .gta-header {
+      font-family: 'Pricedown', sans-serif;
     }
 
     nav {
       text-align: center;
-      background-color: #ddd;
+      background-color: #AEDBF2;
       padding: 10px;
     }
 
@@ -45,7 +54,7 @@
       text-decoration: none;
       margin: 0 15px;
       font-family: 'Pricedown', sans-serif;
-      color: #333;
+      color: #FFFFFF;
     }
 
     .titles {
@@ -58,14 +67,13 @@
 <body>
 
   <header>
-    <h1>Your Website Name</h1>
+    <div class="gta-header">gta</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
   </header>
-
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </nav>
 
   <div class="titles">
     <h2>Title of Page 1</h2>
